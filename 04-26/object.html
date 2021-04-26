@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function qwe(){
+
+        // }
+        // console.log(qwe.prototype);
+        // console.log(typeof qwe.prototype);
+        // var obj = {}
+        // obj.name = "lixiaoya"
+        // obj.age = 19
+        // obj.sex = "女"
+        // console.log(obj);
+
+        
+
+        // function Person(name,sex,age){
+        //     this.name = name
+        //     this.age = age
+        //     // this.sex = sex
+        // }
+
+        // var p1 = new Person("lixiaoya",19)
+        // var p2 = new Person("fengzhuolin",18)
+
+        // Person.prototype.name = "lixiaoya"
+        // Person.prototype.age = 19
+        // Person.prototype.sex = "女"
+
+        // var p1 = new Person()
+        // console.log(p1);
+        // console.log(p1.name);
+        // console.log(p1.age);
+        // console.log(p1.sex);
+
+        // var p2 = new Person()
+        // console.log(p2);
+        // console.log(p2.name);
+        // console.log(p2.age);
+        // console.log(p2.sex);
+
+        // var p3 = new Person("lixiaoya","女",19)
+        // console.log(p3);
+
+        // var obj1 = {}
+        // var obj2 = {
+        //     color:"red",
+        //     width:"100px"
+        // } 
+        // obj2.hello = function(){
+        //     alert("hello world")
+        // }
+        // console.log(obj2);
+        // console.log(obj2.color);
+        // obj2.hello();
+
+        // var obj = {
+        //     name:"lixiaoya",
+        //     age:19,
+        //     sex:"女"
+        // }
+        // obj.email = "2715038265@qq.com"
+        // delete obj.age
+        // // console.log(obj);
+        // for (k in obj){
+        //     console.log(k,obj[k]);
+        // }
+
+        var obj = {}
+        Object.defineProperty(obj,"sex",{
+            value:"女",
+            configurable:true,
+            writable:true,
+            enumerable:true,
+        })
+
+        Object.defineProperty(obj,"age",{
+            value:19,
+            enumerable:true,
+            configurable:true,
+        })
+        obj.email = "2715038265@qq.com"
+        // console.log(obj);
+        // for (k in obj){
+        //     console.log(k);
+        // }
+        delete obj.age
+        console.log(obj);
+    </script>
+</body>
+</html>
