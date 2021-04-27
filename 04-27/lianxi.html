@@ -77,15 +77,83 @@
         // }
         // test()()
 
-        function f1(){
-            var a = "hello"
-            function f2(){
-                return a
+        // function f1(){
+        //     var a = "hello"
+        //     function f2(){
+        //         return a
+        //     }
+        //     return f2
+        // }
+        // var res = f1()()
+        // console.log(res);
+
+
+        // if(!("a" in window)){
+        //     var a = 12
+        // }
+        // console.log(a);
+
+        // function Person(){
+        //     this.age = 20
+        // }
+        // Person.prototype.age = 30
+        // Person.prototype.getAge = function(){
+        //     return this.age
+        // }
+        // var p = new Person()
+        // console.log(p.getAge());
+
+        // var add = (function(){
+        //     return function(){
+        //         var counter = 0
+        //         return (counter += 1)
+        //     }
+        // })()
+        // add()
+        // add()
+        // console.log(add());
+
+        // var animal = "dog"
+        // function sayAnimal(){
+        //     animal = "cat"
+        //     function animal(){}
+        //     console.log(animal.toString());
+        // }
+        // sayAnimal()
+
+        // function a(){
+        //     var i = 0
+        //     function b(){
+        //         i++
+        //         console.log(i);
+        //     }
+        //     return b
+        // }
+        // var c = a()
+        // c()
+        // c()
+        // c()
+
+        // console.log(a);
+        // a = "hello"
+        // function fn(){
+        //     console.log(a);
+        //     a = 12
+        // }
+        // fn()
+        // console.log(a);
+
+        var name  = "cat "
+        var obj ={
+            name:"dog",
+            getName:function(){
+                this.name = 'mouse'
+                return (function(){
+                    return this.name
+                })()
             }
-            return f2
         }
-        var res = f1()()
-        console.log(res);
+        console.log(obj.getName());
     </script>
 </body>
 </html>
