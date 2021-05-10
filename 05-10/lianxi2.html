@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pwd_str = ""
+        new Promise(function(resolve,reject){
+            //当异步操作成功 调用resolve
+            //原生Ajax
+            //实例化 XHR
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState==4 && xhr.status==200) {
+                    //接受服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("接收到的服务器的数据：",res_data);
+                    resolve(res_data)
+                }
+            }
+            //open
+            xhr.open("get","http://vue.api.comcto.com/api/password1.php")
+            //send
+            xhr.send()
+        }).then(function(data){
+            console.log("then方法接收到的数据：",data);
+            pwd_str += data
+
+            return new Promise(function(resolve,reject){
+                //请求第二个密码
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState==4 && xhr.status==200) {
+                    //接受服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("接收到的服务器的数据：",res_data);
+                    resolve(res_data)
+                }
+            }
+            //open
+            xhr.open("get","http://vue.api.comcto.com/api/password2.php")
+            //send
+            xhr.send()
+            })
+        }).then(function(data){
+            console.log("第二个then方法接收到的数据：",data);
+            pwd_str += data
+
+            return new Promise(function(resolve,reject){
+                //请求第三个密码
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState==4 && xhr.status==200) {
+                    //接受服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("接收到的服务器的数据：",res_data);
+                    resolve(res_data)
+                }
+            }
+            //open
+            xhr.open("get","http://vue.api.comcto.com/api/password3.php")
+            //send
+            xhr.send()
+            })
+        }).then(function(data){
+            console.log("第三个then方法接收到的数据：",data);
+            pwd_str += data
+
+            return new Promise(function(resolve,reject){
+                //请求第四个密码
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState==4 && xhr.status==200) {
+                    //接受服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("接收到的服务器的数据：",res_data);
+                    resolve(res_data)
+                }
+            }
+            //open
+            xhr.open("get","http://vue.api.comcto.com/api/password4.php")
+            //send
+            xhr.send()
+            })
+        }).then(function(data){
+            pwd_str += data
+            console.log("第四个then方法接收到的数据：",data);
+            console.log("接收到的密码字符：",pwd_str);
+        })
+    </script>
+</body>
+</html>

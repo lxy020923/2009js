@@ -16,6 +16,15 @@
             //拦截属性的读操作
             get(t,p){
                 console.log("读取了属性：",p);
+                if (p == "sex") {
+                    console.log("禁止读取sex属性");
+                }
+            },
+            set(t,p,f,r){
+                console.log(t);
+                console.log(p);
+                console.log(f);
+                console.log(r);
             },
         })
         p1.name

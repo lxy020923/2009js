@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function * f1(){
+        //     let a = 11
+        //     let b = 22
+        //     yield a+b
+        //     yield "bbb"
+        //     yield "ccc"
+        //     yield "hello world"
+        // }
+
+        // for(v of f1()){
+        //     console.log(v);
+        // }
+
+        // let arr = [11,22,33,44]
+        // let it = arr[Symbol.iterator]()
+
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+        // console.log(it.next());
+
+        // for (let v of arr){
+        //     console.log(v);
+        // }
+
+        // console.log("==============");
+        // for(let v of arr){
+        //     console.log(v);
+        // }
+
+        let obj = {
+            name: "zhangsan",
+            age: 11,
+            sex: "男"
+        }
+
+        function * it(){
+            for(k in this){
+                yield this[k]
+            }
+        }
+
+        console.log(Object.prototype);
+        Object.prototype[Symbol.iterator] = it
+
+        for(v of obj){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>
